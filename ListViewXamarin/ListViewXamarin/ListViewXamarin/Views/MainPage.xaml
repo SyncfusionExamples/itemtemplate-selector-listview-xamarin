@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataTemplateSelector.MainPage"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:local="clr-namespace:DataTemplateSelector">
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MyDataTemplateSelector x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <sync:SfListView x:Name="ListView" 
+                         ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                         ItemsSource="{Binding Messages}"
+                         ItemSize="105"
+                         SelectionMode="None"
+                         BackgroundColor="#FFFAF0"/>
+    </Grid>
+</ContentPage>

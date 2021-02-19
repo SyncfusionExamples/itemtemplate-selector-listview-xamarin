@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataTemplateSelector.OutgoingViewCell">
+    <Grid ColumnSpacing="2" Padding="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="0" OutlineColor="Transparent" HasShadow="False" Grid.Column="1" BackgroundColor="#FFFFFF">
+            <Label TextColor="Black" HorizontalTextAlignment="Start" Text="{Binding Text}" LineBreakMode="WordWrap" />
+        </Frame>
+        <Label Grid.Row="1" FontSize="Micro" Grid.Column="1" HorizontalTextAlignment="End"  Text="{Binding MessagDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" TextColor="Gray" LineBreakMode="NoWrap"></Label>
+    </Grid>
+</ViewCell>
